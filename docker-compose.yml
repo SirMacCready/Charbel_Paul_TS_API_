@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    image: Anno-1800-Explorer-Helper-Backend:local
+    container_name: backend
+    ports:
+      - 8000:8000
+  frontend:
+    image: Anno-1800-Explorer-Helper-Frontend:local
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - 8080:80
+

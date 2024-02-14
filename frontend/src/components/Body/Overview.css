@@ -1,0 +1,7 @@
+.Overview {
+    display: flex;
+    width: 100%;
+}
+video {
+    height: 350px;
+}

@@ -1,0 +1,25 @@
+# *-------------To do list (very crud friendly)-------------*
+## DataBase
+- **Better Values and vars in Queries**
+
+- **Increase DB population**
+
+- **Finish DB Linkage with Backend**
+
+## BackEnd
+
+- **Route establishment and make them functionnal**
+
+## FrontEnd
+- **FrontEnd Rework**
+
+- **✨ Make it beautiful ✨** (had to put the stars)
+
+- **Data Fetching**
+
+## Fix bugs
+
+
+
+## ~**Resist Chat GPTing everything**~
+ 

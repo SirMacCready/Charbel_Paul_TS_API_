@@ -1,0 +1,37 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.Header {
+    width: 100%;
+    
+    position: fixed;
+}
+#Title {
+    height: 61px;
+    text-align: left;
+    background-color: #574d44;
+    color:#f9f9f4;
+}
+#Main-Title {
+    height: 4rem;
+    line-height: 4rem;
+    margin-left: 12%;
+}
+#Subtitle {
+    height: 56px;
+    text-align: left;
+    background-color: #faf3e7;
+    display:flex;
+    color:#574d44
+}
+.Subtitles {
+    margin-left: 12%; 
+    white-space:nowrap;
+    height: 4rem;
+    line-height: 4rem;
+}
+#container {
+    display:flex;
+}
+

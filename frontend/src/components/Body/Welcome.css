@@ -1,0 +1,32 @@
+#Welcome-Image{
+    margin-left: 15%;
+    max-height: 500px;
+}
+.Container{
+    position:absolute;
+    margin-top: 10%;
+    margin-left: 20%;
+    color: #574d44;
+}
+#blue-text {
+    text-align: left;
+    color:#39a298;
+}
+#Description{
+    margin-top: 10px;
+    text-align: left;
+    width:350px
+}
+.Button{
+    background-color: #37a298;
+    border-radius:5px;
+    width:116px;
+    height:36px;
+    color: #c4e8df ;
+}
+#Texte {
+    display: inline-block;
+    justify-content: center; /* Align horizontal */
+    align-items: center;/* Align vertical */
+    
+}
