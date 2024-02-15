@@ -2,19 +2,20 @@ import './App.css';
 import { useState } from 'react';
 import React from 'react'
 import WelcomePage from './components/welcomePage/WelcomePage.tsx';
+import Header from './components/Header/Header.tsx';
+import Footer from './components/Footer/Footer.tsx'
 import HelperApp from './components/helperApp/HelperApp.tsx';
 function App() {
-  const [displayHelper, setHelperDisplay] = useState(false);
+  const [displayHelper, setHelperDisplay] = useState<boolean>(false);
   function handleHelperDisplay(){
     if (displayHelper === false)
       setHelperDisplay(true)
     else
       setHelperDisplay(false)
-    console.log(displayHelper);
-    return displayHelper
  }
   return (
     <div className="App">
+      <Header/>
       {
       !displayHelper ? 
       <WelcomePage changeHelperDisplay = {handleHelperDisplay}/>  

@@ -3,9 +3,9 @@
     margin: 0%;
 }
 .Header {
+    top: 0;
     width: 100%;
-    
-    position: fixed;
+    position:fixed;
 }
 #Title {
     height: 61px;
@@ -23,7 +23,8 @@
     text-align: left;
     background-color: #faf3e7;
     display:flex;
-    color:#574d44
+    color:#574d44;
+    box-shadow: 1px 1px 10px gray;
 }
 .Subtitles {
     margin-left: 12%; 

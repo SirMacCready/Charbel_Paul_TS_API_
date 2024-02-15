@@ -5,6 +5,7 @@ var router = express.Router();
 //items : Handles All possible changes made to items them-selfs
 router.post('/newitem', function(req, res, next) {
   //Adds new items
+  
   res.sendStatus(200);
 });
 
