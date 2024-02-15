@@ -21,5 +21,5 @@
 
 
 
-## ~**Resist Chat GPTing everything**~
+## ~**Resist the urge to Chat GPTing everything**~
  

@@ -25,11 +25,5 @@ dist/
 # Ignore VS Code settings
 .vscode/
 
-# Ignore IntelliJ IDEA settings
-.idea/
-
 # Ignore npm debug log
 npm-debug.log*
-
-# Ignore yarn errors log
-yarn-error.log
