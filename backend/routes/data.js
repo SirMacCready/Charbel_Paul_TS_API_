@@ -7,6 +7,7 @@ router.get('/getAllData', function(req, res, next) {
     res.sendStatus(200);
   });
 router.get('/getData/:id', function(req, res, next) {
+  //get Specific data
   res.json({requestBody: req.params})
   });
 

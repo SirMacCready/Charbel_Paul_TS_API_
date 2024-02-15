@@ -1,13 +1,26 @@
 import './App.css';
+import { useState } from 'react';
 import React from 'react'
-import Body from './components/Body/Body.js';
-import Header from './components/Header/Header.tsx';
-
+import WelcomePage from './components/welcomePage/WelcomePage.tsx';
+import HelperApp from './components/helperApp/HelperApp.tsx';
 function App() {
+  const [displayHelper, setHelperDisplay] = useState(false);
+  function handleHelperDisplay(){
+    if (displayHelper === false)
+      setHelperDisplay(true)
+    else
+      setHelperDisplay(false)
+    console.log(displayHelper);
+    return displayHelper
+ }
   return (
     <div className="App">
-      <Header></Header>
-      <Body></Body>
+      {
+      !displayHelper ? 
+      <WelcomePage changeHelperDisplay = {handleHelperDisplay}/>  
+      : 
+      <HelperApp/>
+      }
     </div>
   );
 }

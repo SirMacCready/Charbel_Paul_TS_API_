@@ -10,7 +10,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.Header {
+.LPHeader {
   z-index: 999;
 }
 .App-header {

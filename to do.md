@@ -8,9 +8,11 @@
 
 ## BackEnd
 
-- **Route establishment and make them functionnal**
+- **~Route establishment~ and make them functionnal**
 
 ## FrontEnd
+
+- **add buttons to header**
 - **FrontEnd Rework**
 
 - **✨ Make it beautiful ✨** (had to put the stars)
