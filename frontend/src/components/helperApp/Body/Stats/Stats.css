@@ -1,0 +1,93 @@
+.Stats {
+    text-align: left;
+    position: fixed;
+    background-color: #fffefb;
+    width: 100%;
+    top: 20%;
+    left: 0;
+    margin-left: 12%;
+    font-style: italic;
+    color: #574d44;
+    border-bottom: 1px solid #e4dac8;
+}
+
+.GridContainer {  
+    display: grid;
+    width: 50%;
+    height: 100px;
+    grid-template-areas:
+        "A B C D E F G H"
+        "I J K L M N . ."
+        "O P Q R . . . ."
+        "S T U V . . . .";
+        margin-bottom: 1%;
+    
+}
+
+#Craft { 
+    grid-area: A;
+    grid-row-gap: 0;
+}
+#CraftStat { 
+    grid-area: B;
+}
+#Hunti { 
+    grid-area: C;
+}
+#HuntiStat { 
+    grid-area: D;
+}
+#Ratio { 
+    grid-area: E;
+}
+#RatioStat { 
+    grid-area: F;
+}
+#Trait { 
+    grid-area: G;
+}
+#TraitStat { 
+    grid-area: H;
+}
+#Diplo { 
+    grid-area: I;
+}
+#DiploStat { 
+    grid-area: J;
+}
+#Medic { 
+    grid-area: K;
+}
+#MedicStat { 
+    grid-area: L;
+}
+#Moral { 
+    grid-area: M;
+}
+#MoralStat { 
+    grid-area: N;
+}
+#Faith { 
+    grid-area: O;
+}
+#FaithStat { 
+    grid-area: P;
+}
+#Naval { 
+    grid-area: Q;
+}
+#NavalStat { 
+    grid-area: R;
+}
+#Force { 
+    grid-area: S;
+}
+#ForceStat { 
+    grid-area: T;
+}
+#Navig { 
+    grid-area: U;
+}
+#NavigStat { 
+    grid-area: V;
+}

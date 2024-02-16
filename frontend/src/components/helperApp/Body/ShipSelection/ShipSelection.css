@@ -1,0 +1,59 @@
+.ShipSelection {
+    margin-left: 12%;
+    margin-top: 19%;
+    text-align: left;    
+    display:block;
+    width: 100%;
+}
+#ShipSelectionTitle{
+    text-align: left;}
+
+#ShipCollection {
+    
+    overflow-x: scroll;
+    white-space: nowrap; 
+    transition: transform 0.3s ease-out; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    -ms-scroll-chaining: none;
+    /* Prevents Metro from swiping to the next tab or app. */
+    
+    -ms-scroll-snap-type: mandatory;
+    /* Forces a snap scroll behavior on your images. */
+    
+    -ms-scroll-snap-points-x: snapInterval(0%, 100%);
+}
+.HerCard{
+    color: #574d44 ;
+    text-align: center;
+    width: 100px;
+    display: inline-block;
+    border: 1px solid #e7dece ;
+    border-radius: 5px;
+    width: 132px;
+    height: 300px;
+    margin-right:1% ;
+    
+    overflow-x: visible;
+    overflow-y: hidden;
+}
+.HerImage {
+    padding: 5px;
+    width: 90px;
+    height: 90px;
+}
+.Specs p {
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 10%;
+    
+}
+#CargoItem{
+    font-size: 14px;
+    border-bottom: 1px solid #eee7db;
+}
+#NPNav {
+    font-size: 14px;
+    border-bottom: 1px solid #eee7db;
+}
+

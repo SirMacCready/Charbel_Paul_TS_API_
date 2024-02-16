@@ -1,7 +1,4 @@
-*{
-    padding: 0%;
-    margin: 0%;
-}
+
 .Header {
     top: 0;
     width: 100%;
@@ -28,6 +25,7 @@
 }
 .Subtitles {
     margin-left: 12%; 
+    margin-right:-8% ;
     white-space:nowrap;
     height: 4rem;
     line-height: 4rem;
