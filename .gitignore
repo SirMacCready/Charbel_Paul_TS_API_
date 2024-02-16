@@ -7,7 +7,6 @@ dist/
 *.js
 *.jsx
 *.ts
-*.tsx
 
 # Ignore generated files
 *.log
