@@ -42,18 +42,17 @@
     width: 90px;
     height: 90px;
 }
-.Specs p {
+.Values {
     text-align: left;
-    margin-left: 5%;
+    padding: 5%;
+}
+.Values .SubValues {
+    font-size: 14px;
     margin-bottom: 10%;
-    
-}
-#CargoItem{
-    font-size: 14px;
     border-bottom: 1px solid #eee7db;
 }
-#NPNav {
-    font-size: 14px;
-    border-bottom: 1px solid #eee7db;
-}
+.SubValues div{
+    display: flex;
+    justify-content: space-between;
 
+}

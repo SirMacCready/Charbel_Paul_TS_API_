@@ -14,6 +14,7 @@ function ShipSelection({ changeItemDisplay = () => {} }: IShowItems): JSX.Elemen
         return response.json();})
         .then(function(json) {
           setShips(json)
+          
         })
   }
   const selectShip = (event:React.MouseEvent<HTMLDivElement, MouseEvent>) =>{
@@ -23,32 +24,52 @@ function ShipSelection({ changeItemDisplay = () => {} }: IShowItems): JSX.Elemen
   }
   useEffect(() => {
     getShips("http://localhost:1337/ships/herName") 
+    
+    
     }, []) //Add divs and inspire from app
   return (
     <div className="ShipSelection">
         <h2 id='ShipSelectionTitle'>Pick a ship</h2>
         <div id="ShipCollection">
-          {Object.values(Ships).map((key: any) => {return ( 
+          {Object.values(Ships).map((key: any) => {
+            
+    console.log(key.id);
+            return ( 
           <div className='HerCard' id={key.id} onClick={(e)=>selectShip(e)} >
             <div className='IconAndName'> 
-              <img className='HerImage'  src={(key.icon)}/> 
+              <img className='HerImage' src={
+              (key.icon)}/> 
               <h2></h2>
             </div>
-            <div className='Specs'>
-              <div id='CargoItem'>
-                <p id='CargoSlot'>Cargo Slots</p>
-                <p id='ItemSlot'>Item Slots</p>
+            <div className='Values'>
+              <div className='SubValues'>
+                <div className='Cargo'>
+                    <p className='CargoSlot'>Cargo Slots </p>
+                    <p className='CargoSlotValue'>{key.cargo_slots}</p>
+                </div>
+                <div className='Item'>
+                    <p className='ItemSlot'>Item Slots</p>
+                    <p className='ItemSlotValue'>{key.items_slots}</p>
+                </div>
               </div>
-              <div id="NPNav">
-                <p id='NP'>Naval Power</p>
-                <p id='Nav'>Navigation</p>
+              
+              <div className='SubValues'>
+                <div className="NavalPower">
+                  <p className='NP'>Naval Power</p>
+                  <p className='NPValue'>{!key.naval_power ? "-" : key.naval_power }</p>
+                </div>
+                <div className="Navigation">
+                  <p className='Nav'>Navigation</p>
+                  <p className='NavValue'>{!key.navigation ? "-" : key.navigation }</p>
+                </div>
               </div>
-              <div id="EngineRole">
-                <p id='Engine'>Steam Ship</p>
-                <p id='Role'>Trade Ship</p>
+                <div className="Specials">
+                  {key.is_special? <p id='IsSpecial'>Special Ship</p> : null }
+                  {key.steamer === 0 ? <p id='Engine'>Sailling Ship</p> : key.steamer === 1 ? <p id='Engine'>Steam Ship</p> : <p id='Engine'>Hybrid</p>}
+                  <p id='Role'>{key.her_role === 0 ? "Military Ship" : key.her_role === 1 ? "Trade Ship" : null}</p>
               </div>
-            </div>
-          </div>)})}
+                </div>
+            </div>)})}
         </div>
     </div>
   );
