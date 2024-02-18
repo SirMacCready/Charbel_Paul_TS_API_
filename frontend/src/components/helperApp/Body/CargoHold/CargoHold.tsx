@@ -16,9 +16,11 @@ interface IShowStats {
   };
   itemId: number[];
   goodId: number[];
+  setItemId ,
+  setGoodId 
 }
 
-function CargoHold({ shipStats, itemId, goodId }: IShowStats): JSX.Element {
+function CargoHold({ shipStats, itemId, goodId, setItemId, setGoodId}: IShowStats): JSX.Element {
 
   const saveExpedition = async (url: string): Promise<void> => {
     await fetch(url, {
@@ -33,6 +35,8 @@ function CargoHold({ shipStats, itemId, goodId }: IShowStats): JSX.Element {
         ship: shipStats,
       }),
     });
+    setGoodId([])
+    setItemId([])
   };
 
   const cargo_slots: JSX.Element[] = [];

@@ -19,11 +19,9 @@ function ItemsGrid({ setItemId, itemId }: ISetItemId) {
   const addToExpedition = (key : any) => {
     
     if (itemId.includes(key.id)) {
-      console.log('niet');
       
       return
     }
-    console.log('da');
     setItemId(key.id);
     return key
     

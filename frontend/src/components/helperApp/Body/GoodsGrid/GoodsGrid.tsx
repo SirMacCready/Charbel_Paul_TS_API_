@@ -19,11 +19,9 @@ function GoodsGrid({ setGoodId, goodId }: ISetGoodId) {
   const addToExpedition = (key : any) => {
     
     if (goodId.includes(key.id)) {
-      console.log('niet');
       
       return
     }
-    console.log('da');
     setGoodId(key.id);
     return key
     

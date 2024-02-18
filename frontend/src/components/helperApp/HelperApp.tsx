@@ -54,6 +54,8 @@ function HelperApp() {
   };
   itemId : number[];
   goodId : number[];
+  setItemId : any,
+  setGoodId : any
  } 
  type itemsGridPropsType = {
   "setItemId" : any
@@ -63,10 +65,14 @@ function HelperApp() {
   "setGoodId" : any
   "goodId" : Number[]
  }
+
+ //
  let cargoProps : cargoPropsType = {
   "shipStats" : Stat,
   "itemId" : itemId,
-  "goodId" : goodId
+  "goodId" : goodId,
+  setItemId : setItemId,
+  setGoodId : setGoodId
 } 
 let itemsGridProps : itemsGridPropsType = {
   "setItemId" : addItemId,
@@ -77,7 +83,6 @@ let goodsGridProps : goodsGridPropsType = {
   "goodId" : goodId
 } 
 
-console.log(goodId+"|"+itemId);
 
   return (
     <div className="HelperApp">
