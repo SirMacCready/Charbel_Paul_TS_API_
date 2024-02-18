@@ -19,11 +19,9 @@ function GoodsGrid({ setGoodId, goodId }: ISetGoodId) {
   const addToExpedition = (key : any) => {
     
     if (goodId.includes(key.id)) {
-      console.log('niet');
       
       return
     }
-    console.log('da');
     setGoodId(key.id);
     return key
     
@@ -34,6 +32,7 @@ function GoodsGrid({ setGoodId, goodId }: ISetGoodId) {
     }, []) 
   return (
     <div className="GoodsGrid">
+      <h2>Click on a Good:</h2>
         <div id="GoodsPreview">
           {Object.values(items).map((key: any) =>{
             return(key.type == 2? 

@@ -19,11 +19,9 @@ function ItemsGrid({ setItemId, itemId }: ISetItemId) {
   const addToExpedition = (key : any) => {
     
     if (itemId.includes(key.id)) {
-      console.log('niet');
       
       return
     }
-    console.log('da');
     setItemId(key.id);
     return key
     
@@ -33,6 +31,7 @@ function ItemsGrid({ setItemId, itemId }: ISetItemId) {
     }, []) 
   return (
     <div className="ItemsGrid">
+    <h2>Click on a Item:</h2>
         <div id="ItemsPreview">
           {Object.values(items).map((key: any) =>{
             return(key.type == 0 || key.type == 1? 

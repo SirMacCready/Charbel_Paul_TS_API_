@@ -8,6 +8,7 @@ interface IShowItems{
 function ShipSelection({ 
   changeItemDisplay = () => {} }: IShowItems): JSX.Element {
   const [ Ships,setShips ] = useState({})
+  const [ savedExpedition,setsavedExpedition ] = useState({})
 
   const getShips = async (url: string): Promise<void> => {
     await fetch(url)
@@ -18,21 +19,56 @@ function ShipSelection({
           
         })
   }
+  const getExpedition = async (url: string): Promise<void> => {
+    await fetch(url)
+      .then(response => {
+        return response.json();})
+        .then(function(json) {
+          setsavedExpedition(json)
+          
+        })
+  }
   const selectShip = (event:React.MouseEvent<HTMLDivElement, MouseEvent>) =>{
     const currentTarget = event.currentTarget as HTMLDivElement
     const herId : number = Number(currentTarget.id)
     changeItemDisplay(herId,Ships[herId])
     
   }
+  const deleteExpedition = async (url: string,event:React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    //Started error handling
+    const idToDelete = {["idToDelete"]:event.currentTarget.id}
+
+    try {
+      const response = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(idToDelete),
+      });
+  
+      if (response.ok) {
+        
+        return true;
+      } else {
+        throw new Error(`Failed to delete data. Status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      return false;
+    }
+  }
   useEffect(() => {
     getShips("http://localhost:1337/ships/herName") 
+    getExpedition("http://localhost:1337/expedition/allExpeditions")
     
     
-    }, []) //Add divs and inspire from app
+    }, []) 
+    //Add divs and inspire from app
   return (
     <div className="ShipSelection">
-        <h2 id='ShipSelectionTitle'>Pick a ship</h2>
         <div id="ShipCollection">
+        <h2 id='ShipSelectionTitle'>Pick a ship</h2>
           {Object.values(Ships).map((key: any) => {
             return ( 
           <div className='HerCard' id={key.id} onClick={(e)=>selectShip(e)} >
@@ -71,6 +107,12 @@ function ShipSelection({
                 </div>
             </div>)})}
         </div>
+      <div>
+        {Object.values(savedExpedition).map((key: any) => {
+            return ( 
+                <div><span id={key.expedition_id}>{key.ship_id}  {key.item_id}  {key.good_id} <button id={key.expedition_id} onClick={(e)=>deleteExpedition("http://localhost:1337/expedition/badExpedition",e)}>X</button></span></div>
+            )})}
+      </div>
     </div>
   );
 }
