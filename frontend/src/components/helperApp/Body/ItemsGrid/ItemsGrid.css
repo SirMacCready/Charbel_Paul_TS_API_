@@ -1,12 +1,14 @@
 #ItemsPreview {
-    display:inline-block;
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(8, 1fr); /* space between rows, change as needed */
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
 
 .icons {
     height: 70px;
     width:  70px;
-}
-.items {
-    height: 88px;
-    width:  88px;
+    border: 1px solid black;
+    
 }

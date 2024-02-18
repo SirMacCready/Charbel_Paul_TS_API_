@@ -15,7 +15,7 @@ function App() {
  }
   return (
     <div className="App">
-      <Header/>
+      <Header changeHelperDisplay = {handleHelperDisplay}/>
       {
       !displayHelper ? 
       <WelcomePage changeHelperDisplay = {handleHelperDisplay}/>  

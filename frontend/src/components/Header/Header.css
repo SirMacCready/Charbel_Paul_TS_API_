@@ -11,6 +11,7 @@
     color:#f9f9f4;
 }
 #Main-Title {
+    cursor: pointer; 
     height: 4rem;
     line-height: 4rem;
     margin-left: 12%;
@@ -21,6 +22,7 @@
     background-color: #faf3e7;
     display:flex;
     color:#574d44;
+    cursor: pointer; 
     box-shadow: 1px 1px 10px gray;
 }
 .Subtitles {

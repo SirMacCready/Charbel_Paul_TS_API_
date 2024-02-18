@@ -1,14 +1,17 @@
 import './Header.css';
 import React from 'react'
-function Header() {
+interface IHandleHelper{
+    changeHelperDisplay: ()=>void
+  }
+function Header({ changeHelperDisplay = () => {} }: IHandleHelper) {
   return (
     <div className="Header">
         <div id="Title">
                 
-            <h2 id="Main-Title">Anno 1800 Expeditions Helper</h2>
+            <h2 id="Main-Title" onClick={() =>changeHelperDisplay()}>Anno 1800 Expeditions Helper</h2 >
         </div>
         <div id="Subtitle">
-            <div className='Subtitles' id="Equip">
+            <div className='Subtitles' id="Equip" onClick={() =>changeHelperDisplay()}>
                 <h3>Equip an Expedition</h3>
             </div>
             <div className='Subtitles' id="Items">

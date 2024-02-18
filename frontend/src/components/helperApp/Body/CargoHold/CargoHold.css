@@ -3,7 +3,6 @@
     margin-right: 12%;
 }
 #CargoPreview {
-    left: 100px;
     border: 1px solid #988b7b;
     border-radius: 5px;
 }
@@ -13,7 +12,6 @@
 .Slots {
     display: inline-block;
     padding: 10px;
-    margin-left: -15px;
 } 
 .Slot {
     width:84px;
