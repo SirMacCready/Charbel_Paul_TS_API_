@@ -17,8 +17,14 @@ function ItemsGrid() {
     }, []) 
   return (
     <div className="ItemsGrid">
-        <input placeholder='Find item by name' className='SearchBar' id="itemSearch"></input>
         <div id="ItemsPreview">
+          {Object.values(items).map((key: any) =>{
+            return(key.type == 0 || key.type == 1? 
+            <div className="items" id={key.id}>
+              <img className='icons' src={key.icon}/>
+            </div> 
+            : null)
+          })}
         </div>
     </div>
   );

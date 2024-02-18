@@ -3,9 +3,10 @@ import { useState } from 'react';
 import './ShipSelection.css';
 //I know, we didn't learn Interfaces and it might look like I used AI, but nope, I learned this trick at my Job, my tutor uses interfaces in his Python Framework and I learned their existance like this.
 interface IShowItems{
-  changeItemDisplay: (herId:number)=>void
+  changeItemDisplay: (herId:number,ShipStats: object)=>void
 }
-function ShipSelection({ changeItemDisplay = () => {} }: IShowItems): JSX.Element {
+function ShipSelection({ 
+  changeItemDisplay = () => {} }: IShowItems): JSX.Element {
   const [ Ships,setShips ] = useState({})
 
   const getShips = async (url: string): Promise<void> => {
@@ -20,7 +21,8 @@ function ShipSelection({ changeItemDisplay = () => {} }: IShowItems): JSX.Elemen
   const selectShip = (event:React.MouseEvent<HTMLDivElement, MouseEvent>) =>{
     const currentTarget = event.currentTarget as HTMLDivElement
     const herId : number = Number(currentTarget.id)
-    changeItemDisplay(herId)
+    changeItemDisplay(herId,Ships[herId])
+    
   }
   useEffect(() => {
     getShips("http://localhost:1337/ships/herName") 
@@ -32,8 +34,6 @@ function ShipSelection({ changeItemDisplay = () => {} }: IShowItems): JSX.Elemen
         <h2 id='ShipSelectionTitle'>Pick a ship</h2>
         <div id="ShipCollection">
           {Object.values(Ships).map((key: any) => {
-            
-    console.log(key.id);
             return ( 
           <div className='HerCard' id={key.id} onClick={(e)=>selectShip(e)} >
             <div className='IconAndName'> 

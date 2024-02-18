@@ -1,22 +1,36 @@
 var express = require('express');
 var router = express.Router();
+let con  = require('../Database/dbConnection.js');
 
-results = [{
-  "id" : 3,
-  "icon": "https://i.pinimg.com/736x/04/66/2d/04662d1fb07cb0fe31b6f06d98fd9fcd.jpg",
-  "her_role" : "Destroyer",
-  "steamer" : true,
-  "cargo_slots" : 3,
-  "items_slots" : 3,
-  "naval_power" : 200,
-  "navigation" : 12,
-  "is_special" : false,
-}]
 //items : Handles All possible changes made to items them-selfs
 router.get('/getItems', function(req, res, next) {
   //Adds new items
-  res.json(results);
+  function getItems()
+{
+  return new Promise(function(resolve, reject) {
+      // The Promise constructor should catch any errors thrown on
+      // this tick. Alternately, try/catch and reject(err) on catch.
+
+      var query_str =
+      "SELECT * FROM items"
+
+      con.query(query_str, function (err, rows, fields) {
+          // Call reject on error states,
+          // call resolve with results
+          if (err) {
+              return reject(err);
+          }
+          resolve(rows);
+      });
+  });
+  
+}
+getItems().then(function(results) {
+res.json(results)
+}).catch((err) => setImmediate(() => { throw err; }));
+console.log('eeeeeeeeeeeeeee');
 });
+  
 router.post('/newitem', function(req, res, next) {
   //Adds new items
   

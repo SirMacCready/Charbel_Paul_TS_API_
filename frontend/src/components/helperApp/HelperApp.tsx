@@ -12,23 +12,27 @@ function HelperApp() {
   const [ShowItems,setItemVisibility] = useState<boolean>(false)
   const [SelectedShip,setShipSelection] = useState<boolean>(false)
   const [herId,setHerId] = useState<number>(0)
-  const [Stat,setStats] = useState(false)
+  const [Stat,setStats] = useState<object>({})
   const [Item,setItems] = useState(false)
-  function handleShipSelection(hernewId: number){
+  function handleShipSelection(hernewId: number, ShipStats: object){
+    
     if (SelectedShip === false){
       setHerId(hernewId); 
+      setStats(ShipStats)
       setShipSelection(true)
       setItemVisibility(true)
+      
     }
     else{
       setHerId(0) 
+      setStats({"error" : "Empty"})
       setShipSelection(false)
       setItemVisibility(false)
     }
-    console.log(herId);
     
-    
+
  }
+ 
   return (
     <div className="HelperApp">
         <Stats/>
@@ -36,9 +40,11 @@ function HelperApp() {
         {
           !ShowItems ? null : 
           <>
-          <CargoHold/>
-          <ItemsGrid/>
-          <GoodsGrid/>
+          <CargoHold shipStats = {Stat}/>
+          <div className='ItemSelection'>
+            <ItemsGrid/>
+            <GoodsGrid/>
+          </div>
           </>
         }
     </div>
