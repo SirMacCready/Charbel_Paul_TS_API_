@@ -34,6 +34,7 @@ function GoodsGrid({ setGoodId, goodId }: ISetGoodId) {
     }, []) 
   return (
     <div className="GoodsGrid">
+      <h2>Click on a Good:</h2>
         <div id="GoodsPreview">
           {Object.values(items).map((key: any) =>{
             return(key.type == 2? 

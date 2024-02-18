@@ -51,7 +51,7 @@ function CargoHold({ shipStats, itemId, goodId }: IShowStats): JSX.Element {
     cargo_slots.push(
       <div className='Slots' key={`Items-${i}`} id={String(shipStats.id)}>
         <div className='Slot'>
-          <span className='PlusSign'>-</span>
+          <span className='PlusSign'>O</span>
         </div>
       </div>
     );

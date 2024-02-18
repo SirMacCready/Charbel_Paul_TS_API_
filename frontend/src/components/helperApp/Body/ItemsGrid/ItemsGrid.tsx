@@ -33,6 +33,7 @@ function ItemsGrid({ setItemId, itemId }: ISetItemId) {
     }, []) 
   return (
     <div className="ItemsGrid">
+    <h2>Click on a Item:</h2>
         <div id="ItemsPreview">
           {Object.values(items).map((key: any) =>{
             return(key.type == 0 || key.type == 1? 
