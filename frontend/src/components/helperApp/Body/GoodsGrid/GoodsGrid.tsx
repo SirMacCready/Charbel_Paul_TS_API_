@@ -27,6 +27,7 @@ function GoodsGrid({ setGoodId, goodId }: ISetGoodId) {
     
     
   }
+  //Gets the items on render
   useEffect(() => {
     getItems("http://localhost:1337/items/getItems") 
     }, []) 

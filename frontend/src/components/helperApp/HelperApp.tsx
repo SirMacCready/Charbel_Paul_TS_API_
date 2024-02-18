@@ -15,12 +15,16 @@ function HelperApp() {
   const [itemId,setItemId] = useState<number[]>([])
   const [goodId,setGoodId] = useState<number[]>([])
   
+  //Adding item to the items Array
   function addItemId(newitemId: number): void {
     setItemId((olditemsId: number[]) => [...olditemsId, newitemId]);
   }
+  //Adding good to the goods Array
   function addGoodId(newGoodId: number): void {
     setGoodId((oldGoodsId: number[]) => [...oldGoodsId, newGoodId]);
   }
+
+  // shows, hides items & goods and sets id and ship stats on click
   function handleShipSelection(hernewId: number, ShipStats: object){
     
     if (SelectedShip === false){
@@ -65,8 +69,6 @@ function HelperApp() {
   "setGoodId" : any
   "goodId" : Number[]
  }
-
- //
  let cargoProps : cargoPropsType = {
   "shipStats" : Stat,
   "itemId" : itemId,

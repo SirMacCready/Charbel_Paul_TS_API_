@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './CargoHold.css';
 
 interface IShowStats {
+  //Interface for stats
   shipStats: {
     id: number;
     icon: string;
