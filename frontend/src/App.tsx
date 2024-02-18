@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer.tsx'
 import HelperApp from './components/helperApp/HelperApp.tsx';
 function App() {
   const [displayHelper, setHelperDisplay] = useState<boolean>(false);
+  // {/* Determines the visibility of the components below : */}
   function handleHelperDisplay(){
     if (displayHelper === false)
       setHelperDisplay(true)
