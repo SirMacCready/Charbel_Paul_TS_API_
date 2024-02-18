@@ -2,15 +2,13 @@ version: '3'
 
 services:
   backend:
-    image: anno-1800-explorer-helper-backend:local
-    container_name: backend
+    build:
+      context: ./baceaffafkend
     ports:
-      - 1337:8000
-  frontend:
-    image: anno-1800-explorer-helper-frontend:local
-    container_name: frontend
-    depends_on:
-      - backend
-    ports:
-      - 4042:80
+      - "1337:8000"
 
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "4042:80"
