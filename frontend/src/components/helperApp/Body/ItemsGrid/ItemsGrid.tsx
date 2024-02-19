@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import './ItemsGrid.css';
 //I know, we didn't learn Interfaces and it might look like I used AI, but nope, I learned this trick at my Job, my tutor uses interfaces in his Python Framework and I learned their existance like this.
-interface ISetItemId {
-  setItemId : (newitemId : Number)=>void
-  itemId : Number[]
+interface ISetItem {
+  setItem : (newItem : Number)=>void
+  item : Number[]
 }
-function ItemsGrid({ setItemId, itemId }: ISetItemId) {
+function ItemsGrid({ setItem, item }: ISetItem) {
   const [ items,setItems ] = useState({})
   const getItems = async (url: string): Promise<void> => {
     await fetch(url)
@@ -18,11 +18,11 @@ function ItemsGrid({ setItemId, itemId }: ISetItemId) {
   }
   const addToExpedition = (key : any) => {
     
-    if (itemId.includes(key.id)) {
+    if (item.includes(key.id)) {
       
       return
     }
-    setItemId(key.id);
+    setItem(key);
     return key
     
   }

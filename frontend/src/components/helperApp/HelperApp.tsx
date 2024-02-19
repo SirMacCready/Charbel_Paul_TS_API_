@@ -12,14 +12,14 @@ function HelperApp() {
   const [SelectedShip,setShipSelection] = useState<boolean>(false)
   const [herId,setHerId] = useState<number>(0)
   const [Stat,setStats] = useState<object>({})
-  const [itemId,setItemId] = useState<number[]>([])
-  const [goodId,setGoodId] = useState<number[]>([])
+  const [item,setItem] = useState<number[]>([])
+  const [good,setGood] = useState<number[]>([])
   
-  function addItemId(newitemId: number): void {
-    setItemId((olditemsId: number[]) => [...olditemsId, newitemId]);
+  function addItem(newitemId: number): void {
+    setItem((olditemsId: number[]) => [...olditemsId, newitemId]);
   }
-  function addGoodId(newGoodId: number): void {
-    setGoodId((oldGoodsId: number[]) => [...oldGoodsId, newGoodId]);
+  function addGood(newGoodId: number): void {
+    setGood((oldGoodsId: number[]) => [...oldGoodsId, newGoodId]);
   }
   function handleShipSelection(hernewId: number, ShipStats: object){
     
@@ -52,35 +52,35 @@ function HelperApp() {
     her_role: number;
     is_unique: number;
   };
-  itemId : number[];
-  goodId : number[];
-  setItemId : any,
-  setGoodId : any
+  item : any;
+  good : any;
+  setItem : any,
+  setGood : any
  } 
  type itemsGridPropsType = {
-  "setItemId" : any
-  "itemId" : number[]
+  "setItem" : any
+  "item" : any
  } 
  type goodsGridPropsType = {
-  "setGoodId" : any
-  "goodId" : Number[]
+  "setGood" : any
+  "good" : any
  }
 
  //
  let cargoProps : cargoPropsType = {
   "shipStats" : Stat,
-  "itemId" : itemId,
-  "goodId" : goodId,
-  setItemId : setItemId,
-  setGoodId : setGoodId
+  "item" : item,
+  "good" : good,
+  setItem : setItem,
+  setGood : setGood
 } 
 let itemsGridProps : itemsGridPropsType = {
-  "setItemId" : addItemId,
-  "itemId" : itemId
+  "setItem" : addItem,
+  "item" : item
 } 
 let goodsGridProps : goodsGridPropsType = {
-  "setGoodId" : addGoodId,
-  "goodId" : goodId
+  "setGood" : addGood,
+  "good" : good
 } 
 
 

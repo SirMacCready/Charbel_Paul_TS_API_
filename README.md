@@ -23,7 +23,7 @@
 
     ###Notable future feature being : 
 
-    ###-Better looking Styles
+    -Better looking Styles
     -Better Error Handling
     -More Items and goods
     -More Dynamic and ergonomic expedition creation

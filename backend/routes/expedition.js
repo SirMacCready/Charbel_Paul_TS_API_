@@ -28,13 +28,15 @@ getExpedition().then(function(results) {
 })
 router.post('/newExpedition', function (req, res, next) {
   // Adds new DB SAVED expedition
+  console.log(req.body);
   const { items, goods, ship } = req.body;
   function saveExpedition() {
     return new Promise(function (resolve, reject) {
       //Randomizing exp ID
       expeditionId = (Math.random() * (999 - 0) + 0)
       //Getting all items and goods and making an expedition with all the items but the same id
-      for (let i = 0; i < items.length; i++) {
+      for (let i = 0; i < items.length || i < goods.length; i++) {
+        console.log('SPIIIN');
         const insertQuery = 'INSERT INTO saved_expeditions (expedition_id,ship_id, item_id, good_id) VALUES (?,?, ?, ?)';
 
         // Check if there's a corresponding value in goods, otherwise use null
@@ -95,5 +97,7 @@ router.delete('/badExpedition', function(req, res, next) {
     
 }
 
+}
+)
+
 module.exports = router;
-})
