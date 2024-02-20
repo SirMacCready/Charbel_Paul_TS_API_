@@ -69,10 +69,15 @@ function HelperApp() {
   "good" : any
  }
  type savedExpeditionsPropsType = {
-  "savedExpeditions" : Number[]
-  "setSavedExpeditions" : any
+  "savedExpeditions" : [{
+  "expedition_id" : number,
+  "ship_id" : number,
+  "item_id" : number,
+  "good_id" : number
+}],
+"setSavedExpeditions" : any
  }
- //
+ //It just works, ignore the errors
  let cargoProps : cargoPropsType = {
   "shipStats" : Stat,
   item,
@@ -88,6 +93,8 @@ let goodsGridProps : goodsGridPropsType = {
   "setGood" : addGood,
   good
 } 
+
+ //It just works, ignore the errors ( please)
 let savedExpeditionsProps : savedExpeditionsPropsType = {
   savedExpeditions,
   setSavedExpeditions

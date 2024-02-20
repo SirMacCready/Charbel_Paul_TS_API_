@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './CargoHold.css';
 import { jsPDF } from "jspdf";
-import { log } from 'console';
 interface IShowStats {
   shipStats: {
     id: number;
