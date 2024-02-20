@@ -1,14 +1,43 @@
 version: '3'
 
 services:
-  backend:
-    build:
-      context: ./baceaffafkend
+  db:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_DATABASE: anno_1800_app
+      MYSQL_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
-      - "1337:8000"
+      - "3306:6033"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: anno_1800_app
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: "1"
+    restart: always
+    ports:
+      - 8081:80
+
+  backend:
+    image: maccready/anno_1800_app-backend:v1
+    ports:
+      - "1337:1337"
+    depends_on:
+      - db
 
   frontend:
-    build:
-      context: ./frontend
+    image: maccready/anno_1800_app-frontend:v1
     ports:
-      - "4042:80"
+      - "3000:3000"
+    depends_on:
+      - backend
+volumes:
+  dbdata:

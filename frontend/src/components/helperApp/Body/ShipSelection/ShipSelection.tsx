@@ -107,12 +107,6 @@ function ShipSelection({
                 </div>
             </div>)})}
         </div>
-      <div>
-        {Object.values(savedExpedition).map((key: any) => {
-            return ( 
-                <div><span id={key.expedition_id}>{key.ship_id}  {key.item_id}  {key.good_id} <button id={key.expedition_id} onClick={(e)=>deleteExpedition("http://localhost:1337/expedition/badExpedition",e)}>X</button></span></div>
-            )})}
-      </div>
     </div>
   );
 }

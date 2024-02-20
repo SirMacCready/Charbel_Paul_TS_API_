@@ -1,16 +1,35 @@
-const mysql = require('mysql');
-
+const mysql = require('mysql2');
+const retry = require("retry")
+const dns = require('dns');  
 //Connecting to DB
 let con = mysql.createConnection({
-  host: "localhost",
+  host: "db",
   user: "root",
-  password: "",
   database: 'anno_1800_app',
+  port: "3306"
+});
+let operation = retry.operation({
+  retries: 5,
+  factor: 2,
+  minTimeout: 1000,
+  maxTimeout: 10000,
+  randomize: true,
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
+operation.attempt(function(currentAttempt) {
+  con.connect(function (err) {
+    console.log("retrying...");
+    if (operation.retry(err)) {
+      console.log("retry number : "+ String(currentAttempt));
+      return;
+    }
+    if (err) {
+      console.error('Failed to connect to the database:', err);
+      return;
+    }
+    console.log("In the DB");
+    con.end();
+  });
 });
 
 module.exports = con;

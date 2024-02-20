@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:20.11 as build
+FROM node:20.11-alpine as build
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ RUN npm install
 
 COPY ./ .
 
-EXPOSE 3333
+EXPOSE 1337
 
 # Command to run your application
 CMD ["node", "app.js"]

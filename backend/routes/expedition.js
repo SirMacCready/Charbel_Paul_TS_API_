@@ -4,15 +4,14 @@ let con  = require('../Database/dbConnection.js');
 
 //Expedition : Changes item,Ship etc... In the Exp
 router.get('/allExpeditions', function(req, res, next) {
+  console.log("eeeeeeeeeee");
   //Adds new DB SAVED expedition
-  
   function getExpedition()
 {
     return new Promise(function(resolve, reject) {
 
-        var query_str =
-        "SELECT * FROM saved_expeditions"
-
+        let query_str =
+        "SELECT * FROM `saved_expeditions` INNER JOIN items ON items.id = saved_expeditions.item_id"
         con.query(query_str, function (err, rows, fields) {
             if (err) {
                 return reject(err);

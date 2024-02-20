@@ -6,6 +6,7 @@ import ShipSelection from './Body/ShipSelection/ShipSelection.tsx';
 import CargoHold from './Body/CargoHold/CargoHold.tsx';
 import ItemsGrid from './Body/ItemsGrid/ItemsGrid.tsx';
 import GoodsGrid from './Body/GoodsGrid/GoodsGrid.tsx';
+import SavedExpeditions from './Body/SavedExpeditions/SavecExpeditions.tsx';
 
 function HelperApp() {
   const [ShowItems,setItemVisibility] = useState<boolean>(false)
@@ -14,6 +15,7 @@ function HelperApp() {
   const [Stat,setStats] = useState<object>({})
   const [item,setItem] = useState<number[]>([])
   const [good,setGood] = useState<number[]>([])
+  const [savedExpeditions,setSavedExpeditions] = useState<number[]>([])
   
   function addItem(newitemId: number): void {
     setItem((olditemsId: number[]) => [...olditemsId, newitemId]);
@@ -52,6 +54,7 @@ function HelperApp() {
     her_role: number;
     is_unique: number;
   };
+  //Change the anies, anys, anyies ? 
   item : any;
   good : any;
   setItem : any,
@@ -65,24 +68,30 @@ function HelperApp() {
   "setGood" : any
   "good" : any
  }
-
+ type savedExpeditionsPropsType = {
+  "savedExpeditions" : Number[]
+  "setSavedExpeditions" : any
+ }
  //
  let cargoProps : cargoPropsType = {
   "shipStats" : Stat,
-  "item" : item,
-  "good" : good,
-  setItem : setItem,
-  setGood : setGood
+  item,
+  good,
+  setItem,
+  setGood
 } 
 let itemsGridProps : itemsGridPropsType = {
   "setItem" : addItem,
-  "item" : item
+  item
 } 
 let goodsGridProps : goodsGridPropsType = {
   "setGood" : addGood,
-  "good" : good
+  good
 } 
-
+let savedExpeditionsProps : savedExpeditionsPropsType = {
+  savedExpeditions,
+  setSavedExpeditions
+}
 
   return (
     <div className="HelperApp">
@@ -98,6 +107,7 @@ let goodsGridProps : goodsGridPropsType = {
           </div>
           </>
         }
+        <SavedExpeditions {...savedExpeditionsProps}/>
     </div>
   );
 }

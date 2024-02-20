@@ -85,7 +85,7 @@ function resetCargo() {
     
     {item[i]?.id ? cargo_slots.push(
       <div className='Slots' key={`Cargo-${i}`}>
-          <img src={item[i].icon}/> 
+          <img  className="ItemPic" src={item[i].icon}/> 
       </div>
     ) : 
     cargo_slots.push(
@@ -99,14 +99,14 @@ function resetCargo() {
 
   for (let i = 0; i < shipStats.items_slots; i++) {
     {good[i]?.id ? cargo_slots.push(
-      <div className='Slots' key={`Cargo-${i}`}>
-          <img src={good[i].icon}/>
+      <div className='Slots' >
+          <img className="GoodPic" src={good[i].icon}/>
       </div>
     ) : 
     cargo_slots.push(
-      <div className='Slots' key={`Cargo-${i}`}>
+      <div className='Slots' >
         <div className='Slot' id={`good-${i}`}>
-          <span className='PlusSign'>+</span>
+          <span className='PlusSign'>O</span>
         </div>
       </div>
     );}
