@@ -14,7 +14,12 @@
     **IF docker doesn't want to do it's job :**
 
     "cd .\backend\ ; npm install ; cd .. ; cd .\frontend\ ; npm install ; npm run dev"
-    PS : The Backend Image need to be restarted AFTER the DB image has fully been ran, for some obscure reason it just doesn't want to connect in the first place, even with retries waiting for everything to be done
+
+    ***PS : The Backend Image need to be restarted AFTER the DB image has fully been ran, for some obscure reason it just doesn't want to connect in the first place, even with retries waiting for everything to be done***
+
+    **You can also run a first time the compose, shut down and then run again and it will miraculously work**
+
+    ~I love computer science~
 ## Side Note ##
 
     Anno 1800 Expedition Helper is a project heavily inspired by the Website **Anno 1800 App (https://www.anno-expeditions.app)**
@@ -40,3 +45,6 @@
     -better Dockerizing the whole application**
 
         
+## Geek references
+
+to say one of them : ports were "1337" and "4042" 
