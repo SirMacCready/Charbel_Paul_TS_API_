@@ -77,7 +77,7 @@ function HelperApp() {
 }],
 "setSavedExpeditions" : any
  }
- //It just works, ignore the errors
+ //It just works, ignore the errors (please)
  let cargoProps : cargoPropsType = {
   "shipStats" : Stat,
   item,
@@ -94,7 +94,7 @@ let goodsGridProps : goodsGridPropsType = {
   good
 } 
 
- //It just works, ignore the errors ( please)
+ //It just works, ignore the errors ( please )
 let savedExpeditionsProps : savedExpeditionsPropsType = {
   savedExpeditions,
   setSavedExpeditions

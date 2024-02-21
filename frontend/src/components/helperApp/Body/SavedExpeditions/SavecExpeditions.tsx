@@ -13,7 +13,6 @@ interface IGiveSavedExpeditions {
 }
 function SavedExpeditions({savedExpeditions,setSavedExpeditions}:IGiveSavedExpeditions) {
 
-    let expeditionData : any= []
     const getExpeditions = async (url: string): Promise<void> => {
         await fetch(url)
           .then(response => {
@@ -27,8 +26,7 @@ function SavedExpeditions({savedExpeditions,setSavedExpeditions}:IGiveSavedExped
       useEffect(() => {
         getExpeditions("http://localhost:1337/expedition/allExpeditions");
         savedExpeditions.forEach(expedition =>  {
-            expeditionData.push(expedition)
-            console.log(expeditionData);
+          //add saved expeditions WIP (didn't finish in time but will most certainly continue it afterwards !)
             
             
         })
