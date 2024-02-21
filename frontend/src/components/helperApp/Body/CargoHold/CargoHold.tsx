@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './CargoHold.css';
 import { jsPDF } from "jspdf";
+//An long interface to make TS stop having panic attacks 
 interface IShowStats {
   shipStats: {
     id: number;
@@ -21,7 +22,7 @@ interface IShowStats {
 }
 
 function CargoHold({ shipStats, item, good, setItem, setGood}: IShowStats): JSX.Element {
-  
+  //Saves the expedition in DB and opens/saves a ""beautiful""" PDF
   const saveExpedition = async (url: string): Promise<void> => {
     let goodsId : Number[] = []
     let itemsId : Number[] = []
@@ -31,7 +32,7 @@ function CargoHold({ shipStats, item, good, setItem, setGood}: IShowStats): JSX.
     good.forEach(element => {
       goodsId.push(element.id)
       })
-    
+    //Sending the expedition
     await fetch(url, {
       method: 'POST',
       headers: {
@@ -45,7 +46,7 @@ function CargoHold({ shipStats, item, good, setItem, setGood}: IShowStats): JSX.
       }),
     });
     
-
+    //PDF creation
     let pdfExpedition = new jsPDF('l', 'px', "a4", true)
     let expeditionItems : string= ""
     let expeditionGoods : string= ""
@@ -57,6 +58,7 @@ function CargoHold({ shipStats, item, good, setItem, setGood}: IShowStats): JSX.
       expeditionGoods += (`<img style="width:20px;background-color:white;" src="${element.icon}"/>`)
       })
     
+      //PDF contain building
     const expeditionHtml =`<h2 style="display:inline;width:100%;font-size:24px;">Our Glorious Expedition :</h2> <br/>
                               <div className="herIcon">
                                 <h3 style="width:100%;font-size:12px">Our Ship :</h3>
@@ -72,13 +74,18 @@ function CargoHold({ shipStats, item, good, setItem, setGood}: IShowStats): JSX.
     const htmled = pdfExpedition.html(html)
     htmled.save("A New Expedition !")
     
+    //Resets memory to make another expedition
     setGood([])
     setItem([])
   };
+
+  //Resets Cargo ( thanks captain obvious)
 function resetCargo() {
   setGood([])
   setItem([])
 }
+
+  // a more easy way to see what the hell I'm doing with that part of the component
   const cargo_slots: JSX.Element[] = [];
   for (let i = 0; i < shipStats.cargo_slots; i++) {
     

@@ -9,6 +9,8 @@ import GoodsGrid from './Body/GoodsGrid/GoodsGrid.tsx';
 import SavedExpeditions from './Body/SavedExpeditions/SavecExpeditions.tsx';
 
 function HelperApp() {
+
+  //All our states
   const [ShowItems,setItemVisibility] = useState<boolean>(false)
   const [SelectedShip,setShipSelection] = useState<boolean>(false)
   const [herId,setHerId] = useState<number>(0)
@@ -17,12 +19,16 @@ function HelperApp() {
   const [good,setGood] = useState<number[]>([])
   const [savedExpeditions,setSavedExpeditions] = useState<number[]>([])
   
+  
+  //Add item/Goods to the expediton
   function addItem(newitemId: number): void {
     setItem((olditemsId: number[]) => [...olditemsId, newitemId]);
   }
   function addGood(newGoodId: number): void {
     setGood((oldGoodsId: number[]) => [...oldGoodsId, newGoodId]);
   }
+
+  //Handles if a ship has been selected to display items
   function handleShipSelection(hernewId: number, ShipStats: object){
     
     if (SelectedShip === false){
@@ -41,6 +47,8 @@ function HelperApp() {
     
     
  }
+
+ //Custom types so typescript will stop yelling at me
  type cargoPropsType = {
   shipStats: {
     id: number;
@@ -54,7 +62,7 @@ function HelperApp() {
     her_role: number;
     is_unique: number;
   };
-  //Change the anies, anys, anyies ? 
+  //anies, anys, anyies ? "any"ways, the only any rows of doom of that project 
   item : any;
   good : any;
   setItem : any,
@@ -77,6 +85,7 @@ function HelperApp() {
 }],
 "setSavedExpeditions" : any
  }
+ //Props to be passed to children
  //It just works, ignore the errors (please)
  let cargoProps : cargoPropsType = {
   "shipStats" : Stat,

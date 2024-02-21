@@ -16,6 +16,7 @@ let operation = retry.operation({
   randomize: true,
 });
 
+//Tries to connect to the DB , if fails, restarts (It requires a backend image restart (db needs to finish launching first before backend )for I don't know why.)
 operation.attempt(function(currentAttempt) {
   con.connect(function (err) {
     console.log("retrying...");
