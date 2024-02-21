@@ -1,7 +1,7 @@
 # Charbel_Paul_TS_API_
 
 
-## Installation :##
+## Installation :
     Node Version : 20.11
     "
     docker pull maccready/anno_1800_app-backend:v1
@@ -20,12 +20,12 @@
     **You can also run a first time the compose, shut down and then run again and it will miraculously work**
 
     ~I love computer science~
-## Side Note ##
+## Side Note
 
     Anno 1800 Expedition Helper is a project heavily inspired by the Website **Anno 1800 App (https://www.anno-expeditions.app)**
 
     The project sets to recreate the website but in **TSX** ( the original one have been made in **Vue.js**)
-
+    
     No usage of AI, **pure Brain Power and it hurts.**
 
     Some features haven't been discussed in class, such as Interfaces, but I have learned them at my work and some others by my previous experiences ( even before my arrival at HETIC)
@@ -46,5 +46,4 @@
 
         
 ## Geek references
-
-to say one of them : ports were "1337" and "4042" 
+    to say one of them : ports were "1337" and "4042" 
